@@ -1,3 +1,4 @@
+import java.util.*;
 class Solution {
     public static int isStackPermutation(int n, int[] ip, int[] op) {
         int j = 0;
