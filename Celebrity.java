@@ -1,6 +1,8 @@
+import java.util.Scanner;
+
 class Solution
 { 
-    int celebrity(int M[][], int n)
+    static int celebrity(int M[][], int n)
     {
     	int i=0,j=n-1;
     	while(i<j){
@@ -20,5 +22,16 @@ class Solution
     	    }
     	}
     	return c;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[][] m = new int[n][n];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                m[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println(celebrity(m,n));
     }
 }
