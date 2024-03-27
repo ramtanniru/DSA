@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 class Solution
 {
@@ -22,6 +22,6 @@ class Solution
         for(int i=0;i<n;i++){
             a[i] = sc.nextInt();
         }
-        System.out.println(calculateSpan(a, n));
+        System.out.println(Arrays.toString(calculateSpan(a, n)));
     }
 }
