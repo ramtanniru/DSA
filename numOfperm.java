@@ -1,3 +1,4 @@
+// Number of permutations and combinations
 import java.util.*;
 public class numOfperm {
     static int fact(int n){
