@@ -3,10 +3,10 @@ public class ActivitySelection {
         System.out.print(0 + " ");
         int j = 0;
         for (int i = 1; i < n; i++) {
-            if (s[i] > f[j]) {
-                System.out.print(i + " ");
-                j = i;
+            if (s[i] >= f[j]) {
+                System.out.print((i+1) + " ");
             }
+            j++;
         }
     }
 
