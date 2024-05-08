@@ -14,15 +14,11 @@ class Solution:
             stk.append(str(root.val))
             if root.left==None and root.right==None:
                 self.res.append("->".join(stk))
-                if stk:
-                    stk.pop()
-                return
-            if root.left:
-                traverse(root.left,stk)
-            if root.right:
-                traverse(root.right,stk)
-            if stk:
                 stk.pop()
+                return
+            traverse(root.left,stk)
+            traverse(root.right,stk)
+            stk.pop()
             return
         traverse(root)
         return self.res
