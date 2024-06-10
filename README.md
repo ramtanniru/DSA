@@ -1,4 +1,4 @@
-# Leetcode Daily Coding Progress
+# DSA Coding Progress
 
 Welcome to my GitHub repository dedicated to LeetCode problem solutions in Python and Java programming languages, focusing on topics from the Neetcode DSA Cheat Sheet. This repository will serve as a log of my coding progress as I tackle a new LeetCode problem each day.
 
