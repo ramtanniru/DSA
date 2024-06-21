@@ -19,3 +19,4 @@ class Solution:
         if len(mergeL)%2!=0:
             return mergeL[len(mergeL)//2]
         return (mergeL[len(mergeL)//2]+mergeL[(len(mergeL)-1)//2])/2
+    
