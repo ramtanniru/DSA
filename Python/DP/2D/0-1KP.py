@@ -1,6 +1,4 @@
 class Solution:
-    
-    #Function to return max value that can be put in knapsack of capacity W.
     def knapSack(self,W, wt, pr, n):
         dp = [[0 for i in range(W+1)] for j in range(n+1)]
         for i in range(1,n+1):
