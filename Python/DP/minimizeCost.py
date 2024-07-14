@@ -12,3 +12,4 @@ class Solution:
                 iteration += 1
             dp[i] = miN
         return dp[0] 
+    
