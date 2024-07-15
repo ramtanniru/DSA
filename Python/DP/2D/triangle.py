@@ -5,4 +5,3 @@ class Solution:
             for j in range(i,-1,-1):
                 dp[i][j] = min(dp[i+1][j],dp[i+1][j+1]) + triangle[i][j]
         return dp[0][0] 
-    
