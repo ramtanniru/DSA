@@ -12,3 +12,4 @@ class Solution:
             if not vis[i]:
                 dfs(i)
         return stk[::-1] 
+    
