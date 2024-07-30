@@ -16,3 +16,4 @@ class Solution:
                     dist[num] = 1+cost
                     queue.append((1+cost,num))
         return -1 if dist[end]==float('inf') else dist[end] 
+    
