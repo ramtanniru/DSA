@@ -19,3 +19,4 @@ class Solution:
             res.append(d[i].data)
             i += 1
         return res 
+    
