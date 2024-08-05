@@ -1,5 +1,4 @@
 from collections import defaultdict,deque
-
 class Solution:
     def bottomView(self, root):
         d = defaultdict(tuple)
