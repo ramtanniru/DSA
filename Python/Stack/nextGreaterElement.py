@@ -14,3 +14,4 @@ class Solution:
             if flag:
                 res.append(-1)
         return res 
+    
