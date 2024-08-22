@@ -15,3 +15,4 @@ class Solution:
                     res.append(-1)
             stk.append(i)
         return res[::-1][:len(res)//2] 
+    
