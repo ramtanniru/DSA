@@ -22,3 +22,4 @@ class Solution:
                 queue.append((i,nums[i]))
             res.append(queue[0][1])
         return res 
+    
