@@ -25,7 +25,9 @@ def solve(s1,s2):
                 maxEle = ''.join(curr)
             if len(curr)==len(maxEle):
                 maxEle = max(maxEle,''.join(curr))
-    return maxEle+s1
+    res = [i for i in (maxEle+s1)]
+    res.sort(reverse=True)
+    return ''.join(res)
     
 for i in range(int(input())):
     S1 = input()
