@@ -20,68 +20,33 @@ Return an array containing max difference of strongly connected and weakly conne
 '''
 
 from collections import defaultdict
-
-class Solution:
-    def __init__(self):
-        self.res = []
-    
-    def getStronglyConnectedComponents(self,n,From,To,StronglyConnected):
-
-        def maxSumSubarray(arr):
-
-            for i,x in enumerate(arr):
-                arr[i] = StronglyConnected[x-1]
-
-            s = 0
-            maxSum = -1
-            for i in arr:
-                s += i
-                maxSum = max(maxSum,s)
-                if s<0:
-                    break
-            return maxSum
-
-        def dfs(node,s,path):
-            if node not in s:
-                s.add(node)
-                path += [node]
-                for child in adj[node]:
-                    if child not in s:
-                        dfs(child,s,path)
-                        s.remove(child)
-                        path.pop()
-                print("Path",path)
-                val = maxSumSubarray(path[:])
-                self.res[path[0]] = max(self.res[path[0]],val)
-                print(self.res)
-            return
-
-        adj = defaultdict(list)
-        for i in range(len(From)):
-            adj[From[i]].append(To[i])
-            adj[To[i]].append(From[i])
-
-        for i,x in enumerate(StronglyConnected):
-            if x==0:
-                StronglyConnected[i] = -1
-
-        for i in range(n+1):
-            self.res.append(-1)
-
+def solve(n,From,To,StronglyConnected):
+    cost = [[float('inf') for i in range(n)] for j in range(n)]
+    strong = [i for i,x in enumerate(StronglyConnected) if x==1]
+    res = [0 for i in range(n)]
+    for u,v in zip(From,To):
+        u -= 1
+        v -= 1
+        cost[u][v] = 1
+        cost[v][u] = 1
+    for i in range(n):
+        cost[i][i] = 0
+    for k in range(n):
         for i in range(n):
-            dfs(i+1,set(),[])
-        
-        return self.res[1:]
+            for j in range(n):
+                cost[i][j] = min(cost[i][j],cost[i][k]+cost[k][j])
+    for i in range(n):
+        miN = float('inf')
+        for s in strong:
+            miN = min(miN,cost[i][s]-1)
+        res[i] = miN
+    return res
 
-
-if __name__ == "__main__":
-    x = Solution()
-    n = int(input("Enter number of nodes :"))
-    From = [int(i) for i in input().split()]
-    To = [int(i) for i in input().split()]
-    StronglyConnected = [int(i) for i in input().split()]
-    ans = x.getStronglyConnectedComponents(n,From,To,StronglyConnected)
-    print(ans)
+n = int(input())
+From = [int(i) for i in input().split()]
+To = [int(i) for i in input().split()]
+StronglyConnected = [int(i) for i in input().split()]
+print(solve(n,From,To,StronglyConnected))
 
 '''
 
